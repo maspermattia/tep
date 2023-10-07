@@ -1,0 +1,62 @@
+<!DOCTYPE rows [
+    <!ELEMENT rows (row+)>
+    <!ELEMENT row (
+        comune, provincia, localit_, tipologia, tipologia_secondaria, categoria,
+        stelle, denominazione, indirizzo, numero_civico, interno, cap, telefono,
+        fax, posta_elettronica, sito_internet, zona, accesso_ai_disabili, piscina,
+        piscina_coperta, ristorante, parcheggio, sala_conferenze, aria_condizionata,
+        giochi_bimbi, sauna, solarium, fitness, animali_ammessi, centro_storico,
+        zona_fiera, lago, aeroporto, autostrada, impianti_risalita, stazione_fs,
+        mare, termale, periferia, collinare, inglese, francese, tedesco, spagnolo,
+        chiusura_temporanea, altri_servizi, codice_identificativo,
+        data_ultima_modifica, nuova_classificazione_lr11)>
+    <!ELEMENT comune (#PCDATA)>
+    <!ELEMENT provincia (#PCDATA)>
+    <!ELEMENT localit_ (#PCDATA)>
+    <!ELEMENT tipologia (#PCDATA)>
+    <!ELEMENT tipologia_secondaria (#PCDATA)>
+    <!ELEMENT categoria (#PCDATA)>
+    <!ELEMENT stelle (#PCDATA)>
+    <!ELEMENT denominazione (#PCDATA)>
+    <!ELEMENT indirizzo (#PCDATA)>
+    <!ELEMENT numero_civico (#PCDATA)>
+    <!ELEMENT interno (#PCDATA)>
+    <!ELEMENT cap (#PCDATA)>
+    <!ELEMENT telefono (#PCDATA)>
+    <!ELEMENT fax (#PCDATA)>
+    <!ELEMENT posta_elettronica (#PCDATA)>
+    <!ELEMENT sito_internet (#PCDATA)>
+    <!ELEMENT zona (#PCDATA)>
+    <!ELEMENT accesso_ai_disabili (#PCDATA)>
+    <!ELEMENT piscina (#PCDATA)>
+    <!ELEMENT piscina_coperta (#PCDATA)>
+    <!ELEMENT ristorante (#PCDATA)>
+    <!ELEMENT parcheggio (#PCDATA)>
+    <!ELEMENT sala_conferenze (#PCDATA)>
+    <!ELEMENT aria_condizionata (#PCDATA)>
+    <!ELEMENT giochi_bimbi (#PCDATA)>
+    <!ELEMENT sauna (#PCDATA)>
+    <!ELEMENT solarium (#PCDATA)>
+    <!ELEMENT fitness (#PCDATA)>
+    <!ELEMENT animali_ammessi (#PCDATA)>
+    <!ELEMENT centro_storico (#PCDATA)>
+    <!ELEMENT zona_fiera (#PCDATA)>
+    <!ELEMENT lago (#PCDATA)>
+    <!ELEMENT aeroporto (#PCDATA)>
+    <!ELEMENT autostrada (#PCDATA)>
+    <!ELEMENT impianti_risalita (#PCDATA)>
+    <!ELEMENT stazione_fs (#PCDATA)>
+    <!ELEMENT mare (#PCDATA)>
+    <!ELEMENT termale (#PCDATA)>
+    <!ELEMENT periferia (#PCDATA)>
+    <!ELEMENT collinare (#PCDATA)>
+    <!ELEMENT inglese (#PCDATA)>
+    <!ELEMENT francese (#PCDATA)>
+    <!ELEMENT tedesco (#PCDATA)>
+    <!ELEMENT spagnolo (#PCDATA)>
+    <!ELEMENT chiusura_temporanea (#PCDATA)>
+    <!ELEMENT altri_servizi (#PCDATA)>
+    <!ELEMENT codice_identificativo (#PCDATA)>
+    <!ELEMENT data_ultima_modifica (#PCDATA)>
+    <!ELEMENT nuova_classificazione_lr11 (#PCDATA)>
+]>
