@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-  <!-- Identity template -->
+  
   <xsl:template match="@*|node()">
     <xsl:copy>
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
 
-  <!-- Template for the 'rows' element -->
+  
   <xsl:template match="rows">
     <hotels>
       <xsl:apply-templates select="row"/>
     </hotels>
   </xsl:template>
 
-  <!-- Template for the 'row' element -->
+  
   <xsl:template match="row">
     <hotel>
       <comune>
