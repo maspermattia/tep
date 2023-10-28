@@ -9,7 +9,21 @@
             <xs:sequence>
               <xs:element name="comune" type="xs:string"/>
               <xs:element name="provincia" type="xs:string"/>
-              <xs:element name="localit_" type="xs:string"/>
+              <xs:element name="localit_">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="classe">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="nome" type="xs:string"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
               <xs:element name="tipologia" type="xs:string"/>
               <xs:element name="tipologia_secondaria" type="xs:string"/>
               <xs:element name="categoria" type="xs:string"/>

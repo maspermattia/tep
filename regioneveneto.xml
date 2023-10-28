@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="regionevento.xsl"?>
 <rows>
 <row>
-<comune>"AFFI"</comune>
+
+        <comune>"AFFI"</comune>
         <provincia>"VERONA"</provincia>
-        <localit_>" "</localit_>
+        <localit_>
+            <classe nome="5ia">
+            </classe>
+        </localit_>
         <tipologia>"AFFITTACAMERE"</tipologia>
         <tipologia_secondaria>""</tipologia_secondaria>
         <categoria>"2"</categoria>
@@ -53,9 +58,13 @@
 </row>
 
 <row>
+
 <comune>"AFFI"</comune>
     <provincia>"VERONA"</provincia>
-    <localit_>" "</localit_>
+    <localit_>
+            <classe nome="5ib">
+            </classe>
+        </localit_>
     <tipologia>"AFFITTACAMERE"</tipologia>
     <tipologia_secondaria>""</tipologia_secondaria>
     <categoria>"2"</categoria>
@@ -105,9 +114,13 @@
 </row>
 
 <row>
+
 <comune>"AFFI"</comune>
     <provincia>"VERONA"</provincia>
-    <localit_>" "</localit_>
+    <localit_>
+            <classe nome="5ic">
+            </classe>
+        </localit_>
     <tipologia>"AFFITTACAMERE"</tipologia>
     <tipologia_secondaria>""</tipologia_secondaria>
     <categoria>"3"</categoria>
@@ -157,9 +170,13 @@
 </row>
 
 <row>
+
 <comune>"AFFI"</comune>
     <provincia>"VERONA"</provincia>
-    <localit_>" "</localit_>
+    <localit_>
+            <classe nome="5id">
+            </classe>
+        </localit_>
     <tipologia>"AGRITURISMO"</tipologia>
     <tipologia_secondaria>""</tipologia_secondaria>
     <categoria>""</categoria>

@@ -10,6 +10,8 @@
         mare, termale, periferia, collinare, inglese, francese, tedesco, spagnolo,
         chiusura_temporanea, altri_servizi, codice_identificativo,
         data_ultima_modifica, nuova_classificazione_lr11)>
+    <!ATTLIST classe nome CDATA #REQUIRED>
+    <!ELEMENT classe (#PCDATA)>
     <!ELEMENT comune (#PCDATA)>
     <!ELEMENT provincia (#PCDATA)>
     <!ELEMENT localit_ (#PCDATA)>
