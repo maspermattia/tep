@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="regionevento.xsl"?>
 <!DOCTYPE rows [
     <!ELEMENT rows (row+)>
     <!ELEMENT row (
@@ -269,3 +270,4 @@
     <data_ultima_modifica>"42347"</data_ultima_modifica>
     <nuova_classificazione_lr11>""</nuova_classificazione_lr11>
 </row>
+</rows>
