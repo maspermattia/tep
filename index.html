@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client REST</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #response {
+            margin-top: 20px;
+            white-space: pre-wrap; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Client REST</h2>
+        <label for="url">URL:</label>
+        <input type="text" id="url" placeholder="Inserisci l'URL">
+        <button onclick="getAll()">GET</button>
+        <button onclick="makeRequest('POST')">POST</button>
+        <button onclick="makeRequest('PUT')">PUT</button>
+        <button onclick="deleteById()">DELETE</button>
+        <div id="response"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function makeRequest(method) {
+            const url = document.getElementById('url').value;
+            let responseData;
+
+            try {
+                switch (method) {
+                    case 'GET':
+                        responseData = await getAll();
+                        break;
+                    case 'POST':
+                        
+                        const postData = {  };
+                        responseData = await postRequest(url, postData);
+                        break;
+                    case 'PUT':
+                        
+                        const putData = {  };
+                        responseData = await putRequest(url, putData);
+                        break;
+                    case 'DELETE':
+                        responseData = await deleteById();
+                        break;
+                    default:
+                        console.error('Metodo non supportato');
+                        return;
+                }
+                } catch (error) {
+                    displayResponse({ error: error.message });
+                }
+            }
+        
+        async function getRequest(url) {
+            try {
+                const response = await axios.get(url);
+                return response.data;
+            } catch (error) {
+                throw new Error(`Errore durante la richiesta GET: ${error.message}`);
+            }
+        }
+
+        async function deleteRequest(url) {
+            try {
+                const response = await axios.delete(url);
+                return response.data;
+            } catch (error) {
+                throw new Error(`Errore durante la richiesta DELETE: ${error.message}`);
+            }
+        }
+
+        function displayResponse(data) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.innerHTML = JSON.stringify(data, null, 2);
+        }
+
+        const getAll = async function(){
+            try {
+                const url = document.getElementById('url').value;
+                const response = await fetch(url);
+                const data = response.json();
+                return data.data;
+            } catch (err) {
+                console.log("error", err)
+            }
+        }
+
+        const deleteById = async function(){
+            try {
+                const url = document.getElementById('url').value;
+                const response = await fetch(url, {
+                    method: "DELETE"
+                });
+                const data = response.json();
+                return data.data;
+            } catch (err) {
+                console.log("error", err)
+            }
+        }
+    </script>
+</body>
+</html>
