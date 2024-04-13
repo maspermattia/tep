@@ -1,40 +1,80 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cap_provincia_db";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati Ricerca CAP/Provincia</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            font-family: Arial, sans-serif;
+        }
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
-if ($conn->connect_error) {
-    die("Connessione fallita: " . $conn->connect_error);
-}
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #333;
+        }
 
-$response = array();
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
-if(isset($_GET['param'])) {
-    $param = $_GET['param'];
-    $sql = "SELECT * FROM cap_provincia WHERE cap = '$param' OR provincia LIKE '%$param%'";
-    
-    $result = $conn->query($sql);
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "cap_provincia_db";
 
-    if ($result->num_rows > 0) {
-        
-        $response['dati'] = array();
-        while($row = $result->fetch_assoc()) {
-            $response['dati'][] = $row;
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connessione fallita: " . $conn->connect_error);
+    }
+
+    $response = "";
+
+    if(isset($_GET['param'])) {
+        $param = $_GET['param'];
+        $sql = "SELECT * FROM cap_provincia WHERE cap = '$param' OR provincia LIKE '%$param%'";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $response .= "<table>";
+            $response .= "<tr><th>ID</th><th>Provincia</th><th>CAP</th></tr>";
+            while($row = $result->fetch_assoc()) {
+                $response .= "<tr>";
+                $response .= "<td>" . $row['id'] . "</td>";
+                $response .= "<td>" . $row['provincia'] . "</td>";
+                $response .= "<td>" . $row['cap'] . "</td>";
+                $response .= "</tr>";
+            }
+            $response .= "</table>";
+        } else {
+            $response = "Nessun risultato trovato.";
         }
     } else {
-        $response['success'] = false;
-        $response['message'] = "Nessun risultato trovato.";
+        $response = "Parametri mancanti.";
     }
-} else {
-    $response['success'] = false;
-    $response['message'] = "Parametri mancanti.";
-}
 
-header('Content-Type: application/json');
-echo json_encode($response);
+    echo $response;
 
-$conn->close();
-?>
+    $conn->close();
+    ?>
+</body>
+</html>
