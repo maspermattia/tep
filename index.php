@@ -124,15 +124,17 @@
                     case 'GET':
                         responseData = await getRequest(url);
                         break;
-                    case 'POST':
-                        const postData = { key: 'value' }; 
-                        responseData = await postRequest(url, postData);
-                        break;
-                    case 'PUT':
-                        const newCap = document.getElementById('newCap').value;
-                        const newProvincia = document.getElementById('newProvincia').value;
-                        responseData = await putData(url, { param1: newCap, param2: newProvincia });
-                        break;
+                        case 'POST':
+                            let newCap = document.getElementById('newCap').value;
+                            const newProvincia = document.getElementById('newProvincia').value;
+                            const urlWithPath = `${url}/${newCap}/${newProvincia}`;
+                            responseData = await postRequest(urlWithPath);
+                            break;
+                        case 'PUT':
+                            let newCap = document.getElementById('newCap').value;
+                            const newProvincia = document.getElementById('newProvincia').value;
+                            responseData = await putData(url, { param1: newCap, param2: newProvincia });
+                            break;
                     case 'DELETE':
                         responseData = await deleteRequest(url);
                         break;

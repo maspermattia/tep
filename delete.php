@@ -18,7 +18,7 @@ if(isset($_GET['param'])) {
     $sql = "DELETE FROM cap_provincia WHERE id='$id'";
     
     if ($conn->query($sql) === TRUE) {
-      
+        
         $response['message'] = "Record eliminato con successo.";
     } else {
         $response['success'] = false;
